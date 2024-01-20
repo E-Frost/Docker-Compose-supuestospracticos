@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+        id="fcties.informe_empresa"
+        string="Informe Empresa"
+        model="fcties.empresa"
+        report_type="qweb-pdf"
+        name="fcties.informe_empresa_view"
+        file="fcties.informe_empresa_view"
+    />
+
+    <template id="informe_empresa_view">
+        <t t-call="web.basic_layout">
+            <t t-foreach="docs" t-as="empresa">
+                <div class="page">
+                    <div style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">
+                        Información de la Empresa: <t t-esc="empresa.name"/>
+                    </div>
+                    <div>
+                        <strong>Persona de contacto:</strong>
+                        <span t-esc="empresa.persona_contacto"/>
+                    </div>
+                    <div>
+                        <strong>Teléfono de contacto:</strong>
+                        <span t-esc="empresa.telefono_contacto"/>
+                    </div>
+                    <div>
+                        <strong>Correo electrónico:</strong>
+                        <span t-esc="empresa.email"/>
+                    </div>
+                    <div>
+                        <strong>Dirección:</strong>
+                        <span t-esc="empresa.direccion"/>
+                    </div>
+
+                    <div style="margin-top: 20px; font-size: 18px;
+                    font-weight: bold; border-bottom: 1px solid #ccc; padding-bottom: 10px;">
+                        Alumnos
+                    </div>
+
+                    <t t-foreach="sorted(empresa.alumno, key=lambda a: a.curso_academico)" t-as="alumno">
+                        <div style="margin-top: 10px; border-bottom: 1px solid #ccc; padding-bottom: 10px;">
+                            <strong>Nombre:</strong> <t t-esc="alumno.name"/>
+                            <br/>
+                            <strong>Apellidos:</strong> <t t-esc="alumno.apellidos"/>
+                            <br/>
+                            <strong>Curso:</strong> <t t-esc="alumno.curso_academico"/>
+                            <br/>
+                            <strong>Teléfono:</strong> <t t-esc="alumno.telefono"/>
+                            <br/>
+                            <strong>Periodo de Práctica:</strong> <t t-esc="alumno.periodo_practica"/>
+                            <br/>
+                            <strong>Ciclo Formativo:</strong> <t t-esc="alumno.ciclo_formativo"/>
+                        </div>
+                    </t>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

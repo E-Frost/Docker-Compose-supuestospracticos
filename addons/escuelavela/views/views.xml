@@ -1,0 +1,217 @@
+<odoo>
+    <data>
+
+        <!-- Vistas para escuelas -->
+
+        <record model="ir.ui.view" id="view_escuela_tree">
+            <field name="name">escuela.tree</field>
+            <field name="model">escuelavela.escuela</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="logo" widget="image"/>
+                    <field name="phone"/>
+                    <field name="address"/>
+                    <field name="website"/>
+                    <field name="contact_person"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_escuela_form">
+            <field name="name">escuela.form</field>
+            <field name="model">escuelavela.escuela</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="logo" widget="image"/>
+                            <field name="email"/>
+                            <field name="phone"/>
+                            <field name="address"/>
+                            <field name="website"/>
+                            <field name="contact_person"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Vistas para cursos -->
+
+        <record model="ir.ui.view" id="view_cursos_tree">
+            <field name="name">cursos.tree</field>
+            <field name="model">escuelavela.cursos</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="duracion"/>
+                    <field name="horas"/>
+                    <field name="precio"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_cursos_form">
+            <field name="name">cursos.form</field>
+            <field name="model">escuelavela.cursos</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="duracion"/>
+                            <field name="horas"/>
+                            <field name="precio"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Vistas para monitores -->
+
+        <record model="ir.ui.view" id="view_monitores_tree">
+            <field name="name">monitores.tree</field>
+            <field name="model">escuelavela.monitores</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="apellidos"/>
+                    <field name="codigo_monitor"/>
+                    <field name="telefono"/>
+                    <field name="email"/>
+                    <field name="colabora"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_monitores_form">
+            <field name="name">monitores.form</field>
+            <field name="model">escuelavela.monitores</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="apellidos"/>
+                            <field name="codigo_monitor"/>
+                            <field name="telefono"/>
+                            <field name="email"/>
+                            <field name="colabora"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Vistas para alumnos -->
+
+        <record model="ir.ui.view" id="view_alumno_tree">
+            <field name="name">alumno.tree</field>
+            <field name="model">escuelavela.alumno</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="apellidos"/>
+                    <field name="telefono"/>
+                    <field name="email"/>
+                    <field name="numero_matricula"/>
+                    <field name="escuela"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_alumno_form">
+            <field name="name">alumno.form</field>
+            <field name="model">escuelavela.alumno</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="apellidos"/>
+                            <field name="telefono"/>
+                            <field name="email"/>
+                            <field name="numero_matricula"/>
+                            <field name="escuela"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Actions para escuela -->
+
+        <record model="ir.actions.act_window" id="action_escuela_tree">
+            <field name="name">Escuelas</field>
+            <field name="res_model">escuelavela.escuela</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_escuela_form">
+            <field name="name">Nueva Escuela</field>
+            <field name="res_model">escuelavela.escuela</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_escuela_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <!-- Actions para cursos -->
+
+        <record model="ir.actions.act_window" id="action_cursos_tree">
+            <field name="name">Cursos</field>
+            <field name="res_model">escuelavela.cursos</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_cursos_form">
+            <field name="name">Nuevo Curso</field>
+            <field name="res_model">escuelavela.cursos</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_cursos_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <!-- Actions para monitores -->
+
+        <record model="ir.actions.act_window" id="action_monitores_tree">
+            <field name="name">Monitores</field>
+            <field name="res_model">escuelavela.monitores</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_monitores_form">
+            <field name="name">Nuevo Monitor</field>
+            <field name="res_model">escuelavela.monitores</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_monitores_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <!-- Actions para alumno -->
+
+        <record model="ir.actions.act_window" id="action_alumno_tree">
+            <field name="name">Alumnos</field>
+            <field name="res_model">escuelavela.alumno</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_alumno_form">
+            <field name="name">Nuevo Alumno</field>
+            <field name="res_model">escuelavela.alumno</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_alumno_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_root" name="Escuela de Vela" sequence="10"/>
+        <menuitem id="menu_escuela" name="Escuelas" parent="menu_root" action="action_escuela_tree"/>
+        <menuitem id="menu_cursos" name="Cursos" parent="menu_root" action="action_cursos_tree"/>
+        <menuitem id="menu_monitores" name="Monitores" parent="menu_root" action="action_monitores_tree"/>
+        <menuitem id="menu_alumno" name="Alumnos" parent="menu_root" action="action_alumno_tree"/>
+
+    </data>
+</odoo>

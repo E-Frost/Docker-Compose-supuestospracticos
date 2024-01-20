@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+        id="lapeliculera.informe_pelicula"
+        string="Informe sobre la pelicula"
+        model="lapeliculera.pelicula"
+        report_type="qweb-pdf"
+        name="lapeliculera.informe_pelicula_view"
+        file="lapeliculera.informe_pelicula_view"/>
+
+    <template id="informe_pelicula_view">
+        <t t-call="web.basic_layout">
+            <t t-foreach="docs" t-as="pelicula">
+                <div class="page">
+                    <h1 t-field="pelicula.name"/>
+                    <div>
+                        <strong>Director</strong>
+                        <span t-field="pelicula.director"/>
+                    </div>
+                     <div>
+                        <strong>Duracion</strong>
+                        <span t-field="pelicula.duration"/>
+                    </div>
+                     <div>
+                        <strong>Genero</strong>
+                        <span t-field="pelicula.genero"/>
+                    </div>
+                     <div>
+                        <strong>Sinopsis</strong>
+                        <span t-field="pelicula.sinopsis"/>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

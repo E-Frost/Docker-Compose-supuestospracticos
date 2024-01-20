@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_lapeliculera_lapeliculera,lapeliculera.lapeliculera,model_lapeliculera_lapeliculera,base.group_user,1,1,1,1
+access_lapeliculera_admin,lapeliculera.admin,model_lapeliculera_pelicula,base.group_erp_manager,1,1,1,1
+access_lapeliculera_jefe,lapeliculera.jefe,model_lapeliculera_pelicula,lapeliculera_jefe,1,1,1,1
+access_lapeliculera_becario,lapeliculera.becario,model_lapeliculera_pelicula,lapeliculera_becario,1,0,1,0

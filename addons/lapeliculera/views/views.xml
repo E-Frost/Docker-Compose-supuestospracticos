@@ -1,0 +1,78 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="lapeliculera.genero_tree">
+            <field name="name">lapeliculera.genero.tree</field>
+            <field name="model">lapeliculera.genero</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="comentario"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="lapeliculera.genero_form">
+            <field name="name">lapeliculera.genero.form</field>
+            <field name="model">lapeliculera.genero</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group colspan="2" col="2">
+                        <field name="name"/>
+                        <field name="comentario"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="lapeliculera.pelicula_tree">
+            <field name="name">lapeliculera.pelicula.tree</field>
+            <field name="model">lapeliculera.pelicula</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="director"/>
+                    <field name="genero"/>
+                    <field name="duration"/>
+                    <field name="industria"/>
+                    <field name="fecha" widget="date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="lapeliculera.pelicula_form">
+            <field name="name">lapeliculera.pelicula.form</field>
+            <field name="model">lapeliculera.pelicula</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group colspan="2" col="2">
+                        <field name="name"/>
+                        <field name="director"/>
+                        <field name="duration"/>
+                        <field name="industria"/>
+                        <field name="fecha"/>
+                        <field name="genero"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="lapeliculera.genero_action_window">
+            <field name="name">lapeliculera.genero.action_window</field>
+            <field name="res_model">lapeliculera.genero</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="lapeliculera.pelicula_action_window">
+            <field name="name">lapeliculera.pelicula.action_window</field>
+            <field name="res_model">lapeliculera.pelicula</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="lapeliculera" id="lapeliculera.menu_root"/>
+        <menuitem name="Genero" id="lapeliculera_genero_menu" parent="lapeliculera.menu_root"
+                  action="lapeliculera.genero_action_window"/>
+        <menuitem name="Pelicula" id="lapeliculera_pelicula_menu" parent="lapeliculera.menu_root"
+                  action="lapeliculera.pelicula_action_window"/>
+    </data>
+</odoo>
